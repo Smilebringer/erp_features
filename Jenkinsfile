@@ -76,7 +76,7 @@ pipeline {
                             storage1cPath = storages1cPathList[i]
                             testbase = "test_${templateDb}"
                             testbaseConnString = projectHelpers.getConnString(server1c, testbase, agent1cPort)
-                            backupPath = "${env.WORKSPACE}\build\temp_${templateDb}_${utils.currentDateStamp()}"
+                            backupPath = "${env.WORKSPACE}\\build\\temp_${templateDb}_${utils.currentDateStamp()}"
 
                             // // 1. Удаляем тестовую базу из кластера (если он там была) и очищаем клиентский кеш 1с
                             // dropDbTasks["dropDbTask_${testbase}"] = dropDbTask(
@@ -166,7 +166,7 @@ pipeline {
                             admin1cPwdLine = "--db-pwd ${admin1cPwd}"
                         }
                         // Запускаем ADD тестирование на произвольной базе, сохранившейся в переменной testbaseConnString
-                        returnCode = utils.cmd("runner vanessa --settings tools\vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --pathvanessa tools\add\bddRunner.epf")
+                        returnCode = utils.cmd("runner vanessa --settings tools\\vrunner.json ${platform1cLine} --ibconnection \"${testbaseConnString}\" ${admin1cUsrLine} ${admin1cPwdLine} --pathvanessa tools\\add\\bddRunner.epf")
 
                         if (returnCode != 0) {
                             utils.raiseError("Возникла ошибка при запуске ADD на сервере ${server1c} и базе ${testbase}")
@@ -183,11 +183,11 @@ pipeline {
                     return
                 }
 
-                dir ('build\out\allure') {
+                dir ('build\\out\\allure') {
                     writeFile file:'environment.properties', text:"Build=${env.BUILD_URL}"
                 }
 
-                allure includeProperties: false, jdk: '', results: [[path: 'build\out\allure']]
+                allure includeProperties: false, jdk: '', results: [[path: 'build\\out\\allure']]
             }
         }
     }
