@@ -1,7 +1,7 @@
 {
     "ВыполнитьСценарии": true,
 	"ЗавершитьРаботуСистемы": true,
-	"ТаймаутЗапуска1С": "60",
+	"ТаймаутЗапуска1С": "120",
     "ВыводитьСообщенияВФайл": "$workspaceRoot/build/out/vb.log",
     "ЗакрытьTestClientПослеЗапускаСценариев": true,
     "КаталогФич": "$workspaceRoot/features",
@@ -24,7 +24,7 @@
     "КаталогOutputjUnit": "$workspaceRoot/build/out/bdd-junitreport",
     "ДелатьСкриншотПриВозникновенииОшибки": true,
     "СниматьСкриншотКаждогоОкна1С": false,
-    "КаталогOutputСкриншоты": "$workspaceRoot/build/out/allure",
+    "КаталогOutputСкриншоты": "$workspaceRoot/build/out/screenshots",
     "КомандаСделатьСкриншот": "nircmd savescreenshot ",
     "ПутьКRunSikulix": "tools/sikulix/runsikulix.cmd",
     "ПоставщикПользовательскихНастроек": "",
